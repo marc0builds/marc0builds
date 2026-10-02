@@ -10,6 +10,6 @@ Website: **[mmessa28.github.io/marc0builds](https://mmessa28.github.io/marc0buil
 | Project | Status |
 |---|---|
 | [WALL-E replica](https://github.com/mmessa28/wall-e-replica) | 🟡 Printing parts |
-| [Humanoid H1](https://github.com/mmessa28/humanoid-h1) | 🔵 First actuator |
+| [Humanoid H1](https://github.com/mmessa28/humanoid-robot) | 🔵 First actuator |
 
 This repo only holds the website (`index.html`).
