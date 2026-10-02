@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>marc0builds</title>
+<meta name="description" content="A WALL-E replica and a child-sized humanoid robot, 3D-printed and hand-built in a home workshop. Engineered in Germany.">
+<meta property="og:title" content="marc0builds">
+<meta property="og:description" content="Robots built in a workshop, not in a billion-dollar company.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --graphite: #1c1f22;
+    --slate: #2a2f34;
+    --rule: #3b4248;
+    --bone: #ebe7df;
+    --muted: #a39e94;
+    --copper: #c98a4b;
+    --copper-deep: #8f5a2b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--graphite);
+    color: var(--bone);
+    font-family: "Archivo", system-ui, sans-serif;
+    font-variation-settings: "wdth" 100;
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--copper); outline-offset: 3px; border-radius: 2px; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+
+  /* Hero: the headline is printed in layer lines, like a part fresh off the bed */
+  header { padding: 72px 0 40px; }
+  .handle { font-weight: 600; color: var(--muted); font-size: 15px; margin-bottom: 28px; }
+  h1 {
+    font-variation-settings: "wdth" 125;
+    font-weight: 800;
+    font-size: clamp(44px, 11vw, 92px);
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    background:
+      repeating-linear-gradient(180deg, var(--bone) 0 3px, rgba(235,231,223,.62) 3px 4px);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent;
+  }
+  .lede { margin-top: 24px; max-width: 34em; color: var(--muted); font-size: 18px; }
+  .lede strong { color: var(--bone); font-weight: 600; }
+
+  /* Actions */
+  .actions { display: grid; gap: 10px; margin: 40px 0 8px; }
+  .btn {
+    display: flex; justify-content: space-between; align-items: baseline;
+    text-decoration: none; padding: 16px 18px;
+    border: 1px solid var(--rule); border-radius: 6px;
+    font-weight: 600; font-size: 17px;
+    transition: border-color .15s, background-color .15s;
+  }
+  .btn span { color: var(--muted); font-weight: 400; font-size: 15px; }
+  .btn:hover { border-color: var(--muted); }
+  .btn.primary { background: var(--copper); border-color: var(--copper); color: var(--graphite); }
+  .btn.primary span { color: rgba(28,31,34,.7); }
+  .btn.primary:hover { background: #d69a5c; border-color: #d69a5c; }
+
+  /* Projects */
+  section { padding: 56px 0 8px; }
+  h2 {
+    font-variation-settings: "wdth" 112;
+    font-weight: 700; font-size: 26px; line-height: 1.2; margin-bottom: 20px;
+  }
+  .project { border-top: 1px solid var(--rule); padding: 28px 0; }
+  .project h3 { font-variation-settings: "wdth" 112; font-size: 22px; font-weight: 700; }
+  .status { display: inline-block; margin: 6px 0 12px; font-size: 14px; color: var(--copper); font-weight: 600; }
+  .project p { color: var(--muted); max-width: 36em; }
+  .steps { list-style: none; margin-top: 18px; display: grid; gap: 6px; font-size: 15px; }
+  .steps li { display: grid; grid-template-columns: 22px 1fr; color: var(--muted); }
+  .steps li::before { content: ""; width: 10px; height: 10px; margin-top: 7px; border: 1.5px solid var(--rule); border-radius: 50%; }
+  .steps li.done::before { background: var(--muted); border-color: var(--muted); }
+  .steps li.now { color: var(--bone); font-weight: 600; }
+  .steps li.now::before { border-color: var(--copper); background: radial-gradient(circle, var(--copper) 40%, transparent 45%); }
+  .more { display: inline-block; margin-top: 16px; font-size: 15px; font-weight: 600; text-underline-offset: 3px; }
+
+  /* Open source note */
+  .open { background: var(--slate); border-radius: 6px; padding: 24px 22px; margin-top: 40px; }
+  .open h2 { font-size: 20px; margin-bottom: 8px; }
+  .open p { color: var(--muted); }
+
+  footer { padding: 64px 0 48px; color: var(--muted); font-size: 14px; }
+  footer .made { font-variation-settings: "wdth" 125; font-weight: 700; color: var(--bone); font-size: 15px; margin-bottom: 6px; }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="handle">@marc0builds</p>
+    <h1>Robots built in a workshop.</h1>
+    <p class="lede">Not in a billion-dollar lab. A life-sized WALL-E and a child-sized humanoid that will walk on two legs. <strong>3D-printed, hand-wound, budget-built.</strong></p>
+
+    <nav class="actions" aria-label="Links">
+      <a class="btn primary" href="https://buymeacoffee.com/marc0builds">Support the build <span>Buy Me a Coffee</span></a>
+      <a class="btn" href="https://instagram.com/marc0builds">Follow the build <span>Instagram</span></a>
+      <a class="btn" href="https://github.com/mmessa28">Files and parts lists <span>GitHub</span></a>
+    </nav>
+  </header>
+
+  <section aria-labelledby="projects">
+    <h2 id="projects">On the bench</h2>
+
+    <article class="project">
+      <h3>WALL-E replica</h3>
+      <span class="status">Printing parts</span>
+      <p>Life-sized and fully 3D-printed: working tracks, moving arms and a head that looks around. Built on the open-source chillibasket design.</p>
+      <ol class="steps">
+        <li class="done">Base design chosen</li>
+        <li class="now">Printing all parts</li>
+        <li>Assembly</li>
+        <li>Motors and electronics</li>
+        <li>Paint and weathering</li>
+        <li>First drive</li>
+      </ol>
+      <a class="more" href="https://github.com/mmessa28/wall-e-replica">Read the build log</a>
+    </article>
+
+    <article class="project">
+      <h3>Humanoid H1</h3>
+      <span class="status">Building the first joint motor</span>
+      <p>About 1.2 m tall, two legs, more than 20 joints. The goal: walk, talk and react for under €1,500 in parts. The leg motors are printed in carbon filament and wound by hand.</p>
+      <ol class="steps">
+        <li class="now">One actuator, torque test</li>
+        <li>One full test leg</li>
+        <li>Standing on two legs</li>
+        <li>First steps</li>
+        <li>Arms, head, voice</li>
+        <li>All files released</li>
+      </ol>
+      <a class="more" href="https://github.com/mmessa28/humanoid-h1">See the plan and budget</a>
+    </article>
+
+    <div class="open">
+      <h2>Free to build yourself</h2>
+      <p>Every part I design goes on GitHub when it works: print files, parts lists, wiring. Your support pays for the motors, filament and electronics that get it there.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p class="made">Engineered in Germany</p>
+    <p>WALL-E is a character owned by Disney/Pixar. This is a non-commercial fan build.</p>
+  </footer>
+</div>
+</body>
+</html>
